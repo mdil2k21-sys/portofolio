@@ -1,0 +1,487 @@
+/* ===========================
+   CSS RESET & BASE STYLES
+   Reset default browser styles
+   =========================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* box-sizing: border-box → padding & border masuk ke dalam width/height,
+       bukan nambah di luar. Ini bikin layout lebih predictable */
+}
+
+:root {
+    /* CSS Variables: definisiin warna di satu tempat
+       Kalau mau ganti theme, tinggal ubah disini aja */
+    --primary: #2563eb;       /* Biru utama */
+    --primary-dark: #1d4ed8;  /* Biru gelap (hover) */
+    --bg-dark: #0f172a;       /* Background gelap */
+    --bg-card: #1e293b;       /* Background card */
+    --text-main: #f1f5f9;     /* Text utama (terang) */
+    --text-secondary: #94a3b8; /* Text secondary (abu) */
+    --accent: #38bdf8;        /* Accent color (biru muda) */
+    --border: #334155;        /* Border color */
+    --radius: 12px;           /* Border radius standar */
+}
+
+html {
+    /* scroll-behavior: smooth → kalau klik link #about,
+       scroll nya animasi, bukan langsung loncat */
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--bg-dark);
+    color: var(--text-main);
+    line-height: 1.6;
+    /* line-height: 1.6 → jarak antar baris text.
+       1.6 itu sweet spot buat readability */
+}
+
+/* Container: batesin lebar konten biar ga melebihi layar */
+.container {
+    max-width: 1100px;
+    margin: 0 auto;    /* center horizontal */
+    padding: 0 20px;
+}
+
+
+/* ===========================
+   NAVBAR
+   =========================== */
+
+.navbar {
+    position: fixed;    /* Tetep di atas pas scroll */
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;      /* z-index tinggi biar navbar selalu di atas */
+    background: rgba(15, 23, 42, 0.9);  /* Semi-transparent */
+    backdrop-filter: blur(10px);         /* Blur effect di belakang navbar */
+    border-bottom: 1px solid var(--border);
+}
+
+.nav-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;              /* Flexbox: layout horizontal */
+    justify-content: space-between;  /* Logo kiri, links kanan */
+    align-items: center;        /* Vertical center */
+    height: 64px;
+}
+
+.nav-logo {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--text-main);
+    text-decoration: none;      /* Hilangkan underline */
+}
+
+.nav-logo span {
+    color: var(--primary);      /* ".dev" warna biru */
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;           /* Hilangkan bullet point */
+    gap: 32px;                  /* Jarak antar link */
+}
+
+.nav-links a {
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: color 0.2s;     /* Animasi smooth pas hover */
+}
+
+.nav-links a:hover {
+    color: var(--accent);
+}
+
+/* Hamburger menu button (hidden di desktop) */
+.nav-toggle {
+    display: none;              /* Hidden by default, muncul di mobile */
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+}
+
+.hamburger {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background: var(--text-main);
+    position: relative;
+}
+
+/* Pseudo-elements buat 3 garis hamburger */
+.hamburger::before,
+.hamburger::after {
+    content: '';
+    position: absolute;
+    width: 24px;
+    height: 2px;
+    background: var(--text-main);
+    left: 0;
+}
+
+.hamburger::before { top: -7px; }
+.hamburger::after  { top: 7px; }
+
+
+/* ===========================
+   HERO SECTION
+   =========================== */
+
+.hero {
+    min-height: 100vh;          /* Tinggi minimal = full screen */
+    display: flex;
+    align-items: center;        /* Center vertical */
+    padding-top: 64px;          /* Space buat navbar */
+}
+
+.hero-greeting {
+    font-size: 1.1rem;
+    color: var(--accent);
+    font-weight: 500;
+    margin-bottom: 8px;
+}
+
+.hero-name {
+    font-size: clamp(2.5rem, 8vw, 5rem);
+    /* clamp(min, preferred, max):
+       Responsive font size tanpa media query!
+       Min: 2.5rem, Max: 5rem, tengah: 8% viewport width */
+    font-weight: 700;
+    line-height: 1.1;
+    margin-bottom: 16px;
+}
+
+.hero-tagline {
+    font-size: 1.15rem;
+    color: var(--text-secondary);
+    max-width: 540px;
+    margin-bottom: 32px;
+    line-height: 1.7;
+}
+
+.highlight {
+    color: var(--accent);
+    font-weight: 600;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;            /* Wrap ke bawah kalau layar kecil */
+}
+
+
+/* ===========================
+   BUTTONS
+   =========================== */
+
+.btn {
+    display: inline-block;
+    padding: 12px 28px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: all 0.2s;
+    cursor: pointer;
+    border: 2px solid transparent;
+}
+
+.btn-primary {
+    background: var(--primary);
+    color: white;
+}
+
+.btn-primary:hover {
+    background: var(--primary-dark);
+    transform: translateY(-2px);    /* Geser ke atas dikit pas hover */
+}
+
+.btn-secondary {
+    background: transparent;
+    color: var(--text-main);
+    border-color: var(--border);
+}
+
+.btn-secondary:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+    transform: translateY(-2px);
+}
+
+.btn-small {
+    padding: 8px 16px;
+    font-size: 0.8rem;
+}
+
+.btn-outline {
+    background: transparent;
+    color: var(--text-secondary);
+    border-color: var(--border);
+}
+
+.btn-outline:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+}
+
+
+/* ===========================
+   SECTION STYLES (shared)
+   =========================== */
+
+section {
+    padding: 100px 0;
+}
+
+.section-title {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 48px;
+    position: relative;
+    display: inline-block;
+}
+
+/* Garis bawah di title */
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    width: 60px;
+    height: 3px;
+    background: var(--primary);
+    border-radius: 2px;
+}
+
+
+/* ===========================
+   ABOUT SECTION
+   =========================== */
+
+.about-content p {
+    color: var(--text-secondary);
+    font-size: 1.05rem;
+    max-width: 640px;
+    margin-bottom: 16px;
+    line-height: 1.8;
+}
+
+
+/* ===========================
+   SKILLS SECTION
+   =========================== */
+
+.skills {
+    background: rgba(30, 41, 59, 0.3);  /* Slightly different bg biar ada kontras */
+}
+
+.skills-grid {
+    display: grid;
+    /* auto-fill + minmax: responsive grid TANPA media query!
+       Kolom minimal 160px, max 1fr (equal share) */
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: 20px;
+}
+
+.skill-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 28px 20px;
+    text-align: center;
+    transition: all 0.3s;
+}
+
+.skill-card:hover {
+    border-color: var(--primary);
+    transform: translateY(-4px);
+    /* box-shadow: glow effect biru pas hover */
+    box-shadow: 0 8px 30px rgba(37, 99, 235, 0.15);
+}
+
+.skill-icon {
+    font-size: 2rem;
+    margin-bottom: 12px;
+}
+
+.skill-card h3 {
+    font-size: 0.95rem;
+    margin-bottom: 6px;
+    font-weight: 600;
+}
+
+.skill-card p {
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+}
+
+
+/* ===========================
+   PROJECTS SECTION
+   =========================== */
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 24px;
+}
+
+.project-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    overflow: hidden;           /* Content ga keluar dari card */
+    transition: all 0.3s;
+}
+
+.project-card:hover {
+    border-color: var(--primary);
+    transform: translateY(-4px);
+    box-shadow: 0 8px 30px rgba(37, 99, 235, 0.15);
+}
+
+.project-image {
+    height: 180px;
+    background: linear-gradient(135deg, var(--bg-dark), var(--bg-card));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.project-placeholder {
+    color: var(--text-secondary);
+    font-size: 1.2rem;
+}
+
+.project-info {
+    padding: 24px;
+}
+
+.project-info h3 {
+    font-size: 1.15rem;
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+.project-info p {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    margin-bottom: 16px;
+    line-height: 1.6;
+}
+
+.project-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 16px;
+}
+
+.tag {
+    background: rgba(37, 99, 235, 0.15);
+    color: var(--accent);
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 500;
+}
+
+.project-links {
+    display: flex;
+    gap: 8px;
+}
+
+
+/* ===========================
+   CONTACT SECTION
+   =========================== */
+
+.contact {
+    text-align: center;
+    background: rgba(30, 41, 59, 0.3);
+}
+
+.contact-text {
+    color: var(--text-secondary);
+    font-size: 1.1rem;
+    margin-bottom: 32px;
+    max-width: 480px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.contact-links {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+
+/* ===========================
+   FOOTER
+   =========================== */
+
+.footer {
+    text-align: center;
+    padding: 32px 0;
+    border-top: 1px solid var(--border);
+    color: var(--text-secondary);
+    font-size: 0.85rem;
+}
+
+
+/* ===========================
+   RESPONSIVE (Mobile)
+   Media query: style berubah kalau layar < 768px
+   =========================== */
+
+@media (max-width: 768px) {
+    /* Hamburger muncul di mobile */
+    .nav-toggle {
+        display: block;
+    }
+
+    /* Nav links jadi vertical & hidden */
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 64px;
+        left: 0;
+        width: 100%;
+        background: var(--bg-dark);
+        flex-direction: column;
+        padding: 20px;
+        gap: 16px;
+        border-bottom: 1px solid var(--border);
+    }
+
+    /* Muncul kalau ada class 'active' (di-toggle sama JS) */
+    .nav-links.active {
+        display: flex;
+    }
+
+    .hero-name {
+        font-size: 2.5rem;
+    }
+
+    .projects-grid {
+        grid-template-columns: 1fr;    /* 1 kolom di mobile */
+    }
+
+    .skills-grid {
+        grid-template-columns: repeat(2, 1fr);  /* 2 kolom di mobile */
+    }
+}

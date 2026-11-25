@@ -1,220 +1,165 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <!-- META: Ini info dasar buat browser -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <!-- TITLE: Yang muncul di tab browser -->
-    <title>Aidil - Sistem Informasi Student</title>
-
-    <!-- LINK: Nyambungin file CSS buat styling -->
+    <title>Aidil — Sistem Informasi</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-
-    <!-- FONT: Pake Google Fonts biar typography bagus -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
-    <!-- ===================== -->
-    <!-- NAVBAR (Menu navigasi) -->
-    <!-- ===================== -->
-    <nav class="navbar">
-        <div class="nav-container">
-            <!-- Logo / Nama lu -->
-            <a href="#" class="nav-logo">aidil<span>.dev</span></a>
-
-            <!-- Menu links -->
-            <ul class="nav-links">
-                <li><a href="#about">About</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-
-            <!-- Hamburger menu (buat mobile) -->
-            <button class="nav-toggle" aria-label="toggle navigation">
-                <span class="hamburger"></span>
-            </button>
+    <!-- Fixed side nav -->
+    <aside class="sidebar">
+        <a href="#" class="sidebar-name">Aidil<span>.</span></a>
+        <nav class="sidebar-nav">
+            <a href="#work" class="nav-link">Work</a>
+            <a href="#about" class="nav-link">About</a>
+            <a href="#contact" class="nav-link">Contact</a>
+        </nav>
+        <div class="sidebar-meta">
+            <span>Based in Indonesia</span>
+            <span>Open to work</span>
         </div>
-    </nav>
+    </aside>
 
-    <!-- ===================== -->
-    <!-- HERO SECTION (Intro) -->
-    <!-- ===================== -->
-    <section class="hero">
-        <div class="container">
-            <p class="hero-greeting">Hai, gue</p>
-            <h1 class="hero-name">Aidil</h1>
-            <p class="hero-tagline">Mahasiswa <span class="highlight">Sistem Informasi</span> semester 5 yang passionate di web development & AI integration.</p>
-            <div class="hero-buttons">
-                <a href="#projects" class="btn btn-primary">Lihat Projects</a>
-                <a href="#contact" class="btn btn-secondary">Contact Me</a>
-            </div>
-        </div>
-    </section>
+    <main class="main">
 
-    <!-- ===================== -->
-    <!-- ABOUT SECTION -->
-    <!-- ===================== -->
-    <section id="about" class="about">
-        <div class="container">
-            <h2 class="section-title">About Me</h2>
-            <div class="about-content">
-                <p>
-                    Gue mahasiswa Sistem Informasi semester 5 yang lagi deep dive ke dunia
-                    web development dan AI. Gue percaya teknologi harus solve real problems,
-                    bukan cuma teori di kelas.
-                </p>
-                <p>
-                    Currently learning: Full-stack development, AI integration, dan
-                    gimana caranya bikin produk digital yang beneran berguna.
-                </p>
-            </div>
-        </div>
-    </section>
-
-    <!-- ===================== -->
-    <!-- SKILLS SECTION -->
-    <!-- ===================== -->
-    <section id="skills" class="skills">
-        <div class="container">
-            <h2 class="section-title">Skills</h2>
-            <div class="skills-grid">
-                <!-- Setiap skill card -->
-                <div class="skill-card">
-                    <div class="skill-icon">🌐</div>
-                    <h3>Frontend</h3>
-                    <p>HTML, CSS, JavaScript</p>
-                </div>
-                <div class="skill-card">
-                    <div class="skill-icon">⚙️</div>
-                    <h3>Backend</h3>
-                    <p>Node.js, Express (learning)</p>
-                </div>
-                <div class="skill-card">
-                    <div class="skill-icon">🤖</div>
-                    <h3>AI Integration</h3>
-                    <p>Prompt Engineering, MCP</p>
-                </div>
-                <div class="skill-card">
-                    <div class="skill-icon">🗄️</div>
-                    <h3>Database</h3>
-                    <p>MySQL, MongoDB (learning)</p>
-                </div>
-                <div class="skill-card">
-                    <div class="skill-icon">🐧</div>
-                    <h3>Linux</h3>
-                    <p>Zorin OS, Terminal, Git</p>
-                </div>
-                <div class="skill-card">
-                    <div class="skill-icon">📊</div>
-                    <h3>Sistem Informasi</h3>
-                    <p>Business Analysis, System Design</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ===================== -->
-    <!-- PROJECTS SECTION -->
-    <!-- ===================== -->
-    <section id="projects" class="projects">
-        <div class="container">
-            <h2 class="section-title">Projects</h2>
-            <div class="projects-grid">
-
-                <!-- Project Card 1 -->
-                <div class="project-card">
-                    <div class="project-image">
-                        <div class="project-placeholder">🚀 Coming Soon</div>
-                    </div>
-                    <div class="project-info">
-                        <h3>Weather App</h3>
-                        <p>Aplikasi cuaca real-time menggunakan public API.</p>
-                        <div class="project-tags">
-                            <span class="tag">HTML</span>
-                            <span class="tag">CSS</span>
-                            <span class="tag">JavaScript</span>
-                            <span class="tag">API</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="#" class="btn btn-small">Live Demo</a>
-                            <a href="#" class="btn btn-small btn-outline">GitHub</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project Card 2 -->
-                <div class="project-card">
-                    <div class="project-image">
-                        <div class="project-placeholder">🚀 Coming Soon</div>
-                    </div>
-                    <div class="project-info">
-                        <h3>Task Manager</h3>
-                        <p>Full-stack task management app dengan authentication.</p>
-                        <div class="project-tags">
-                            <span class="tag">React</span>
-                            <span class="tag">Node.js</span>
-                            <span class="tag">MongoDB</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="#" class="btn btn-small">Live Demo</a>
-                            <a href="#" class="btn btn-small btn-outline">GitHub</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project Card 3 -->
-                <div class="project-card">
-                    <div class="project-image">
-                        <div class="project-placeholder">🚀 Coming Soon</div>
-                    </div>
-                    <div class="project-info">
-                        <h3>AI Chatbot</h3>
-                        <p>Chatbot dengan AI integration menggunakan Claude API.</p>
-                        <div class="project-tags">
-                            <span class="tag">Python</span>
-                            <span class="tag">FastAPI</span>
-                            <span class="tag">MCP</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="#" class="btn btn-small">Live Demo</a>
-                            <a href="#" class="btn btn-small btn-outline">GitHub</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ===================== -->
-    <!-- CONTACT SECTION -->
-    <!-- ===================== -->
-    <section id="contact" class="contact">
-        <div class="container">
-            <h2 class="section-title">Get In Touch</h2>
-            <p class="contact-text">
-                Mau collaborate, discuss project, atau just say hi?
-                Feel free to reach out!
+        <!-- Hero -->
+        <section class="hero">
+            <p class="hero-index">01 / Intro</p>
+            <h1 class="hero-title">
+                Building things<br>for the <em>web.</em>
+            </h1>
+            <p class="hero-sub">
+                Mahasiswa Sistem Informasi semester 5. Fokus di web development,
+                AI integration, dan bikin produk digital yang beneran kepake.
             </p>
-            <div class="contact-links">
-                <a href="mailto:mdil2k21@gmail@email.com" class="btn btn-primary">Email Me</a>
-                <a href="https://github.com/mdil2k21-sys" target="_blank" class="btn btn-secondary">GitHub</a>
+            <div class="hero-cta">
+                <a href="#work" class="link-arrow">Lihat karya <span>↓</span></a>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- ===================== -->
-    <!-- FOOTER -->
-    <!-- ===================== -->
-    <footer class="footer">
-        <div class="container">
-            <p>&copy; 2026 Aidil. Built with ❤️ and AI.</p>
-        </div>
-    </footer>
+        <!-- Work / Projects -->
+        <section id="work" class="work">
+            <div class="section-head">
+                <p class="hero-index">02 / Work</p>
+                <span class="section-count">03 projects</span>
+            </div>
 
-    <!-- SCRIPT: JavaScript file buat interactivity -->
+            <!-- Project rows - editorial style, not cards -->
+            <div class="project-list">
+
+                <a href="https://portofolio-08do.netlify.app" class="project-row" target="_blank">
+                    <span class="project-num">01</span>
+                    <div class="project-info">
+                        <h2 class="project-title">Personal Portfolio</h2>
+                        <p class="project-desc">Website portfolio responsive. HTML, CSS, JavaScript dari nol.</p>
+                    </div>
+                    <div class="project-tags">
+                        <span>HTML</span>
+                        <span>CSS</span>
+                        <span>JS</span>
+                    </div>
+                    <span class="project-arrow">↗</span>
+                </a>
+
+                <a href="#" class="project-row" target="_blank">
+                    <span class="project-num">02</span>
+                    <div class="project-info">
+                        <h2 class="project-title">Weather App</h2>
+                        <p class="project-desc">Real-time cuaca pakai Open-Meteo API. Fetch, async/await.</p>
+                    </div>
+                    <div class="project-tags">
+                        <span>JavaScript</span>
+                        <span>API</span>
+                    </div>
+                    <span class="project-arrow">↗</span>
+                </a>
+
+                <a href="#" class="project-row" target="_blank">
+                    <span class="project-num">03</span>
+                    <div class="project-info">
+                        <h2 class="project-title">Next Project</h2>
+                        <p class="project-desc">Full-stack app dengan authentication. Coming soon.</p>
+                    </div>
+                    <div class="project-tags">
+                        <span>Node.js</span>
+                        <span>Database</span>
+                    </div>
+                    <span class="project-arrow">↗</span>
+                </a>
+
+            </div>
+        </section>
+
+        <!-- About -->
+        <section id="about" class="about">
+            <p class="hero-index">03 / About</p>
+            <div class="about-grid">
+                <h2 class="about-heading">
+                    Sistem Informasi<br> bukan cuma teori.
+                </h2>
+                <div class="about-text">
+                    <p>
+                        Gue percaya teknologi harus solve masalah nyata.
+                        Bukan cuma slideshow presentasi, tapi sesuatu yang
+                        orang bisa pake dan bilang "oh ini berguna."
+                    </p>
+                    <p>
+                        Currently deep diving ke full-stack development
+                        dan gimana AI bisa accelerate workflow.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Skills as inline list, not cards -->
+            <div class="skills-row">
+                <div class="skill-group">
+                    <span class="skill-label">Frontend</span>
+                    <span class="skill-items">HTML · CSS · JavaScript · React</span>
+                </div>
+                <div class="skill-group">
+                    <span class="skill-label">Backend</span>
+                    <span class="skill-items">Node.js · Express · MongoDB</span>
+                </div>
+                <div class="skill-group">
+                    <span class="skill-label">Tools</span>
+                    <span class="skill-items">Git · VSCode · Linux · AI APIs</span>
+                </div>
+                <div class="skill-group">
+                    <span class="skill-label">Core</span>
+                    <span class="skill-items">System Analysis · Business Process · UI/UX</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact -->
+        <section id="contact" class="contact">
+            <p class="hero-index">04 / Contact</p>
+            <h2 class="contact-title">Let's talk.</h2>
+            <div class="contact-links">
+                <a href="mailto:mdil2k21@gmail.com" class="contact-link">
+                    <span class="contact-label">Email</span>
+                    <span class="contact-value">mdil2k21@gmail.com</span>
+                </a>
+                <a href="https://github.com/mdil2k21-sys" target="_blank" class="contact-link">
+                    <span class="contact-label">GitHub</span>
+                    <span class="contact-value">mdil2k21-sys</span>
+                </a>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <span>2026 — Aidil</span>
+            <span>Built with intention.</span>
+        </footer>
+
+    </main>
+
     <script src="script.js"></script>
 </body>
 </html>

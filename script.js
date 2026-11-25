@@ -1,22 +1,30 @@
 // ===========================
 // PORTFOLIO V2 — script.js
-// Minimal: active nav highlight on scroll
+// Optimized IntersectionObserver & Active Nav Sync
 // ===========================
 
 const sections = document.querySelectorAll('section[id]');
 const navLinks = document.querySelectorAll('.nav-link');
 
-// IntersectionObserver buat highlight nav yang aktif
+const observerOptions = {
+    root: null,
+    // rootMargin mendeteksi bagian atas layar lebih awal agar transisi pas
+    rootMargin: '-20% 0px -70% 0px',
+    threshold: 0
+};
+
 const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
-            // Hapus active dari semua link
-            navLinks.forEach(l => l.classList.remove('active'));
-            // Tambahin active ke link yang match section ini
-            const activeLink = document.querySelector(`.nav-link[href="#${entry.target.id}"]`);
-            if (activeLink) activeLink.classList.add('active');
+            const id = entry.target.getAttribute('id');
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${id}`) {
+                    link.classList.add('active');
+                }
+            });
         }
     });
-}, { threshold: 0.3 });
+}, observerOptions);
 
-sections.forEach(s => observer.observe(s));
+sections.forEach(section => observer.observe(section));

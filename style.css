@@ -386,12 +386,21 @@ body {
     .main { margin-left: 0; padding: 0 20px; }
     .hero { padding: 60px 0 48px; }
     .about-grid { grid-template-columns: 1fr; gap: 24px; }
+
+    /* ponytail: tags disembunyikan di <=480px, bukan 768px.
+       Tech stack tetap terlihat di tablet. Upgrade path: tampilkan
+       vertikal di mobile jika ruang sempit. */
     .project-row { grid-template-columns: 24px 1fr 16px; gap: 12px; }
-    .project-tags { display: none; }
+    .project-tags {
+        grid-column: 2 / -1;
+        padding-top: 8px;
+    }
+
     .skill-group { grid-template-columns: 1fr; gap: 4px; }
 }
 
 @media (max-width: 480px) {
     .sidebar-name { font-size: 1.2rem; }
     .sidebar-nav { gap: 12px; font-size: 0.8rem; }
+    .project-tags { display: none; }
 }

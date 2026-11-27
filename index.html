@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aidil — Sistem Informasi Portfolio</title>
+    <meta name="description" content="Portofolio Muhammad Aidil Syawal Fitrah — Junior Full-Stack Web Developer & Systems Analyst. Membangun aplikasi web end-to-end, integrasi REST API, dan backend modular.">
+    <title>Aidil — Junior Full-Stack Developer</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -12,16 +13,16 @@
 <body>
 
     <!-- Fixed side nav -->
-    <aside class="sidebar">
+    <aside class="sidebar" aria-label="Navigasi utama">
         <div>
-            <a href="#" class="sidebar-name">Aidil<span>.</span></a>
+            <a href="#" class="sidebar-name" aria-label="Beranda Aidil">Aidil<span>.</span></a>
             <div class="status-badge">
-                <span class="status-dot"></span>
+                <span class="status-dot" aria-hidden="true"></span>
                 <span class="status-text">Terbuka untuk Magang</span>
             </div>
         </div>
 
-        <nav class="sidebar-nav">
+        <nav class="sidebar-nav" aria-label="Bagian halaman">
             <a href="#work" class="nav-link">Karya</a>
             <a href="#about" class="nav-link">Tentang</a>
             <a href="#contact" class="nav-link">Kontak</a>
@@ -39,78 +40,78 @@
         <section id="intro" class="hero">
             <p class="hero-index">01 / Pengenalan</p>
             <h1 class="hero-title">
-                Building things <em>for the web.</em>
+                Junior Full-Stack <em>Developer.</em>
             </h1>
             <p class="hero-sub">
-                Mahasiswa Sistem Informasi semester 5 yang berfokus pada pengembangan aplikasi web fungsional, analisis sistem, dan eksplorasi workflow berbasis AI.
+                Mahasiswa Sistem Informasi semester 5. Membangun aplikasi web end-to-end, integrasi REST API, dan backend modular.
             </p>
             <div class="hero-cta">
-                <a href="#work" class="link-arrow">Lihat karya terpublikasi <span>↓</span></a>
+                <a href="#work" class="link-arrow">Lihat karya terpublikasi <span aria-hidden="true">↓</span></a>
             </div>
         </section>
 
         <!-- Work / Projects -->
-        <section id="work" class="work">
+        <section id="work" class="work" aria-labelledby="work-title">
             <div class="section-head">
-                <p class="hero-index">02 / Karya Terpublikasi</p>
+                <p class="hero-index" id="work-title">02 / Karya Terpublikasi</p>
                 <span class="section-count">03 proyek siap diuji</span>
             </div>
 
             <div class="project-list">
 
                 <!-- Project 01 -->
-                <a href="https://github.com/mdil2k21-sys/portofolio" class="project-row" target="_blank" rel="noopener noreferrer">
-                    <span class="project-num">01</span>
+                <a href="https://github.com/mdil2k21-sys" class="project-row" target="_blank" rel="noopener noreferrer" aria-label="Lihat kode Personal Portfolio Website di GitHub">
+                    <span class="project-num" aria-hidden="true">01</span>
                     <div class="project-info">
                         <h2 class="project-title">Personal Portfolio Website</h2>
-                        <p class="project-desc">Website portofolio bergaya editorial dengan layout asimetris responsif. Didevelop dari nol tanpa framework untuk menguji tata letak CSS dan Semantic HTML.</p>
+                        <p class="project-desc">Website portofolio editorial responsif tanpa framework. Menguji tata letak CSS Grid/Flexbox, arsitektur semantic HTML, dan optimasi performa ringan.</p>
                     </div>
                     <div class="project-tags">
                         <span>HTML5</span>
                         <span>CSS3</span>
                         <span>JavaScript</span>
                     </div>
-                    <span class="project-arrow">↗</span>
+                    <span class="project-arrow" aria-hidden="true">↗</span>
                 </a>
 
                 <!-- Project 02 -->
-                <a href="https://weather-app-ias1.netlify.app" class="project-row" target="_blank" rel="noopener noreferrer">
-                    <span class="project-num">02</span>
+                <a href="https://weather-app-ias1.netlify.app" class="project-row" target="_blank" rel="noopener noreferrer" aria-label="Buka live demo Weather Forecast Readout">
+                    <span class="project-num" aria-hidden="true">02</span>
                     <div class="project-info">
                         <h2 class="project-title">Weather Forecast Readout</h2>
-                        <p class="project-desc">Aplikasi informasi cuaca real-time yang mengintegrasikan Open-Meteo API. Dilengkapi fitur pencarian kota, geolokasi perangkat, dan konversi satuan suhu instan (°C/°F).</p>
+                        <p class="project-desc">Aplikasi cuaca real-time yang mengonsumsi Open-Meteo REST API. Mengelola async state, browser Geolocation API, network error handling, dan konversi unit sisi klien.</p>
                     </div>
                     <div class="project-tags">
                         <span>JavaScript</span>
                         <span>REST API</span>
                         <span>Async/Await</span>
                     </div>
-                    <span class="project-arrow">↗</span>
+                    <span class="project-arrow" aria-hidden="true">↗</span>
                 </a>
 
                 <!-- Project 03 -->
-                <a href="https://todo-app-jnbo.netlify.app" class="project-row" target="_blank" rel="noopener noreferrer">
-                    <span class="project-num">03</span>
+                <a href="https://todo-app-jnbo.netlify.app" class="project-row" target="_blank" rel="noopener noreferrer" aria-label="Buka live demo Task & Priority Manager">
+                    <span class="project-num" aria-hidden="true">03</span>
                     <div class="project-info">
                         <h2 class="project-title">Task & Priority Manager</h2>
-                        <p class="project-desc">Aplikasi manajemen tugas berbasis browser dengan LocalStorage persistence, penyuntingan langsung (inline edit dblclick), penanda prioritas, dan umpan balik audio web.</p>
+                        <p class="project-desc">Task manager berbasis browser dengan LocalStorage persistence, state mutation via inline edit (dblclick), prioritas tugas, dan Web Audio API feedback.</p>
                     </div>
                     <div class="project-tags">
                         <span>JavaScript</span>
                         <span>LocalStorage</span>
                         <span>Web Audio</span>
                     </div>
-                    <span class="project-arrow">↗</span>
+                    <span class="project-arrow" aria-hidden="true">↗</span>
                 </a>
 
             </div>
         </section>
 
         <!-- About -->
-        <section id="about" class="about">
+        <section id="about" class="about" aria-labelledby="about-title">
             <p class="hero-index">03 / Tentang & Kompetensi</p>
             <div class="about-grid">
-                <h2 class="about-heading">
+                <h2 class="about-heading" id="about-title">
                     Sistem Informasi:<br>Menghubungkan Logika Bisnis & Teknologi.
                 </h2>
                 <div class="about-text">
@@ -144,9 +145,9 @@
         </section>
 
         <!-- Contact -->
-        <section id="contact" class="contact">
+        <section id="contact" class="contact" aria-labelledby="contact-title">
             <p class="hero-index">04 / Kontak</p>
-            <h2 class="contact-title">Mari Terhubung.</h2>
+            <h2 class="contact-title" id="contact-title">Mari Terhubung.</h2>
             <p class="contact-sub">Terbuka untuk peluang magang, proyek kolaborasi, atau diskusi seputar pengembangan web dan Sistem Informasi.</p>
             <div class="contact-links">
                 <a href="mailto:mdil2k21@gmail.com" class="contact-link">
@@ -156,6 +157,10 @@
                 <a href="https://github.com/mdil2k21-sys" target="_blank" rel="noopener noreferrer" class="contact-link">
                     <span class="contact-label">GitHub</span>
                     <span class="contact-value">github.com/mdil2k21-sys</span>
+                </a>
+                <a href="https://www.linkedin.com/in/mdil2k21" target="_blank" rel="noopener noreferrer" class="contact-link">
+                    <span class="contact-label">LinkedIn</span>
+                    <span class="contact-value">linkedin.com/in/mdil2k21</span>
                 </a>
             </div>
         </section>
